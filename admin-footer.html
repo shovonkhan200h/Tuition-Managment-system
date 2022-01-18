@@ -1,0 +1,50 @@
+ </div>
+ </div>
+ <script type="text/javascript">
+     var author = '<?php echo $_SESSION["user"]; ?>';
+     
+        if (author == "admin") {
+         document.getElementById("profile").style.display = "none";
+         document.getElementById("notification").style.display = "none";
+         var jd = document.getElementById("joining_date");
+         if(jd!=null){jd.style.display='none';}
+             
+     }
+     if (author == "student" || author == "teacher") {
+         document.getElementById("apporoval").style.display = "none";
+            if (author == "student") {
+                document.getElementById("notification").style.display = "none";
+                var co = document.getElementsByClassName("rightdet");
+                if(co[0]!=null){co[0].style.display = "none";}
+                if(co[1]!=null){co[1].style.display = "none";}
+            }else{
+                
+                var co = document.getElementsByClassName("rightdet");
+                if(co[0]!=null){co[0].style.display = "none";}
+                if(co[1]!=null){co[1].style.display = "none";}
+                
+            }
+     } 
+
+     $(document).ready(function() {
+            $("#hire_details").hide();
+            $("#confirm").hide();
+        });
+     
+     function contshow(){
+         $(document).ready(function(){
+            $("#hire_details").show(2000);
+            $("#confirm").show(2000);
+            $("#hire").slideDown(3000);
+            $("#hire").hide();
+             $(".card").css("margin","0");
+            });
+     }
+
+ </script>
+
+ <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+ <script src="script.js"></script>
+ </body>
+
+ </html>
